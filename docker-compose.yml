@@ -1,0 +1,13 @@
+services:
+  ui-dashboard:
+    build: .
+    working_dir: /workspace
+    volumes:
+      - ".:/workspace"
+      - "/workspace/node_modules"
+    command: /bin/sh -c ./start.sh
+    # command: tail -f /dev/null
+    ports:
+      - "8084:8084"
+      - "5245:5245"
+      - "7186:7186"
